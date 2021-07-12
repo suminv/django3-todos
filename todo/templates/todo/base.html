@@ -1,0 +1,32 @@
+{% comment %} 
+Если user зарегистрирован, пишем его имя и добавляем ссылку Logout
+
+Иначе: добавляем ссылки SignUp и Login
+
+ {% endcomment %}
+
+{% if user.is_authenticated %}
+
+Logged In as {{ user.username}}
+
+<form action="{% url 'logoutuser'%}" method="POST">
+
+{% csrf_token %}
+
+
+{% comment %} as_p делает отступы между строками {% endcomment %}
+
+<button type="submit">Logout</button>
+
+</form>
+
+{% else %}
+
+<a href="{% url 'signupuser' %}">Sign Up</a>
+<a href="{% url 'loginuser' %}">Login</a>
+
+{% endif %}
+<br>
+<br>
+
+{% block content %} {% endblock %}
