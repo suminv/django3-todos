@@ -13,6 +13,9 @@ urlpatterns = [
     
     # TOdos
     path('current/', views.currenttodos, name='currenttodos'),
+    path('create', views.createtodo
+    , name='createtodo'),
+
     # Home page
     path('', views.home, name='home'),
 ]   
