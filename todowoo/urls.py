@@ -13,8 +13,10 @@ urlpatterns = [
     
     # TOdos
     path('current/', views.currenttodos, name='currenttodos'),
-    path('create', views.createtodo
-    , name='createtodo'),
+    path('create', views.createtodo, name='createtodo'),
+    path('todo/<int:todo_pk>/', views.viewtodo, name='viewtodo'),
+
+
 
     # Home page
     path('', views.home, name='home'),
