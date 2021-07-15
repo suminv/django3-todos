@@ -7,10 +7,23 @@
 {{todo.title}}
 
 <form method="POST">
-{% csrf_token %}
+    {% csrf_token %}
 
-{{form.as_p}}
-<button type="submin">Save</button>
+    {{form.as_p}}
+    <button type="submin">Save</button>
 </form>
+
+
+<form method="POST" action="{% url 'completetodo' todo.id %}">
+    {% csrf_token %}
+    <button type="submin">Complete</button>
+</form>
+
+
+<form method="POST" action="{% url 'completetodo' todo.id %}">
+    {% csrf_token %}
+    <button type="submin">Delete</button>
+</form>
+
 
 {% endblock %}
